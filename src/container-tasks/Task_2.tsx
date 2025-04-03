@@ -1,4 +1,5 @@
 import {coursesAndDurationArray} from "../data/CourseWithDirection.ts";
+import ComponentTask2 from "../components/ComponentTask2.tsx";
 
 
 const Task2 = () => {
@@ -6,10 +7,8 @@ const Task2 = () => {
         <div>
 
             {
-                coursesAndDurationArray.map((course) => (
-                    <div className={'bg-lime-500 p-1'} >
-                        {course.title}: {course.monthDuration} month
-                    </div>
+                coursesAndDurationArray.map((course, index) => (
+                    <ComponentTask2 key={index} course={course}/>
                 ))
             }
         </div>
