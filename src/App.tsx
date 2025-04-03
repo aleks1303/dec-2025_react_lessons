@@ -1,11 +1,12 @@
 import './App.css'
+import Task2 from "./container-tasks/Task_2.tsx";
 
 function App() {
 
 
   return (
     <>
-      Hello world!
+      <Task2/>
     </>
   )
 }
