@@ -4,4 +4,5 @@ export interface IModelSimpsons {
     age: number,
     info: string,
     photo: string
+
 }

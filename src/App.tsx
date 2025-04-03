@@ -1,12 +1,12 @@
 import './App.css'
-import CharacterComponent from "./components/CharacterComponent.tsx";
+import FamilyComponent from "./components/FamilyComponent.tsx";
 
 function App() {
 
 
   return (
     <>
-           <CharacterComponent/>
+           <FamilyComponent/>
     </>
   )
 }
