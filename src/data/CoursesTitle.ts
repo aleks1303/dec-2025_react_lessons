@@ -1,4 +1,4 @@
-export const coursesTitle= [
+export const coursesTitle: string[]= [
     'JavaScript Complex',
     'Java Complex',
     'Python Complex',

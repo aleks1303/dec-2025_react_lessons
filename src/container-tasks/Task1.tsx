@@ -1,15 +1,13 @@
 import {coursesTitle} from "../data/CoursesTitle.ts";
-import CoursesTitleArray from "../components/CoursesTitleArray.tsx";
-
 
 const Task1 = () => {
     return (
         <div>
-            {
+            <ul>{
                 coursesTitle.map((course, index) => (
-                    <CoursesTitleArray key={index} course={course}/>
+                    <li className={'bg-yellow-50 p-1 text-gray-500 underline decoration-indigo-500/30'} key={index}>{course}</li>
                 ))
-            }
+            }</ul>
         </div>
     );
 };
