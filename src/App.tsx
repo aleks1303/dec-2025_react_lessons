@@ -8,8 +8,8 @@ function App() {
   return (
     <>
         {
-            coursesArray.map((course) => (
-               <CourseArrayComponent course={course}/>
+            coursesArray.map((course, index) => (
+               <CourseArrayComponent key={index} course={course}/>
             ))
         }
     </>
