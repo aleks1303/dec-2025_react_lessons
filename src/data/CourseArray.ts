@@ -1,4 +1,6 @@
-export const coursesArray = [
+import {ICourseArray} from "../models/ICourseArray.ts";
+
+export const coursesArray: ICourseArray[] = [
     {
         title: 'JavaScript Complex',
         monthDuration: 5,

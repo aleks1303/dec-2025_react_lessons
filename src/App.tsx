@@ -1,11 +1,17 @@
 import './App.css'
+import {coursesArray} from "./data/CourseArray.ts";
+import CourseArrayComponent from "./components/CourseArrayComponent.tsx";
 
 function App() {
 
 
   return (
     <>
-      Hello world!
+        {
+            coursesArray.map((course) => (
+               <CourseArrayComponent course={course}/>
+            ))
+        }
     </>
   )
 }
