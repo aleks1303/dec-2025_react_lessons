@@ -1,4 +1,6 @@
-export const simpsons = [
+import {IModelSimpsons} from "../models/IModelSimpsons.ts";
+
+export const simpsons: IModelSimpsons[] = [
     {
         name: 'Bart',
         surname: 'Simpson',
