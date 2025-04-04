@@ -1,13 +1,12 @@
-import {ICourseArray} from "../models/ICourseArray.ts";
 import {FC} from "react";
+import {ICourseArray} from "../models/ICourseArray.ts";
 
 type MyCourseType = {
-   course: ICourseArray
+  course: ICourseArray
 }
 
-
-
 const CourseArrayComponent:FC<MyCourseType> = (course) => {
+
     return (
 
             <div className={'mb-5 pl-5'}>
