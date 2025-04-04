@@ -12,7 +12,7 @@ const CourseArrayComponent:FC<MyCourseType> = ({course}) => {
                 <h2> Course: {course.title} - {course.monthDuration} month</h2>
                 <h2>{course.hourDuration} hour</h2>
                 <ul>Modules: {course.modules.map((value, index) => (
-                    <li className={'pl-2'} key={index}>- "{value}"</li>
+                    <li className={'pl-2'} key={index}>- {value}</li>
                 ))}</ul>
                 <hr/>
             </div>
