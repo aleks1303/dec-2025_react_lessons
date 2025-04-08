@@ -1,13 +1,12 @@
-import './App.css'
-
-function App() {
+import TodosComponent from "./components/todos-component/TodosComponent.tsx";
 
 
-  return (
-    <>
-      Hello world!
-    </>
-  )
-}
+const App = () => {
+    return (
+        <>
+            <TodosComponent/>
+        </>
+    );
+};
 
-export default App
+export default App;
