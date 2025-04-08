@@ -14,15 +14,18 @@ const UsersComponent = () => {
        }
        fetchUsers()
     }, []);
-    const data  = (item: IUser) => {
-      setItem(item)
+
+    const data = (item: IUser) => {
+        setItem(item)
     }
     return (
         <div>
-            <div>{item?.phone}</div>
             {
                 users.map(user => <UserComponent data={data} key={user.id} item={user}/>)
             }
+
+                <div>{item?.company.name} {item?.phone}</div>
+
         </div>
     );
 };
