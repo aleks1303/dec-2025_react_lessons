@@ -14,7 +14,6 @@ const UsersComponent = () => {
        }
        fetchUsers()
     }, []);
-
     const data  = (item: IUser) => {
       setItem(item)
     }
