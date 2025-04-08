@@ -5,7 +5,6 @@ type SimpsonType = {
     simpson: IModelSimpsons
     children: ReactNode
 }
-
 const CharacterComponent: FC<SimpsonType> = ({simpson, children}) => {
     return (
         <div className={'m-6'}>
