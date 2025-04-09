@@ -1,13 +1,12 @@
-import './App.css'
-
-function App() {
+import PostsComponent from "./components/posts-component/PostsComponent.tsx";
 
 
-  return (
-    <>
-      Hello world!
-    </>
-  )
-}
+const App = () => {
+    return (
+        <>
+            <PostsComponent/>
+        </>
+    );
+};
 
-export default App
+export default App;
