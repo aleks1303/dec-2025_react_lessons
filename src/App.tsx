@@ -1,9 +1,11 @@
+import PostsComponent from "./components/posts-components/PostsComponent.tsx";
 
 
 const App = () => {
     return (
         <div>
-        Hello world!
+       {/*<TodosComponent/>*/}
+            <PostsComponent/>
         </div>
     );
 };
