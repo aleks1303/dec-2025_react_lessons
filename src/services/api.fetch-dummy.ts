@@ -1,5 +1,6 @@
 import {ITodos} from "../models/ITodos.ts";
 import {IPosts} from "../models/IPosts.ts";
+import {IComments} from "../models/IComments.ts";
 
 const endpointDummy = import.meta.env.VITE_API_URL
 
@@ -17,7 +18,11 @@ const getDummyPosts = async (): Promise<IPosts[]> => {
        return posts
 }
 
-
+const getDummyComments = async (): Promise<IComments[]> => {
+    const {comments} = await fetch(endpointDummy + '/comments')
+        .then((response) => response.json())
+      return comments
+}
 
 
 
@@ -25,5 +30,6 @@ const getDummyPosts = async (): Promise<IPosts[]> => {
 
 export {
     getDummyTodos,
-    getDummyPosts
+    getDummyPosts,
+    getDummyComments
 }
