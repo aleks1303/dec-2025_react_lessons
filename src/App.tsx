@@ -1,10 +1,11 @@
+import CommentsComponent from "./components/comments-components/CommentsComponent.tsx";
 
 
 const App = () => {
     return (
-        <div>
-
-        </div>
+        <>
+            <CommentsComponent/>
+        </>
     );
 };
 
