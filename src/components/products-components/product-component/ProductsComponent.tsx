@@ -16,7 +16,7 @@ const ProductsComponent = () => {
     return (
         <div>
             {
-                products.map((product) => (<ProductComponent key={product.id} item={product}/>))
+                products.map((product, index) => (<ProductComponent key={product.id} item={product} index={index}/>))
             }
         </div>
     );

@@ -52,3 +52,4 @@ export default tseslint.config({
   },
 })
 ```
+VITE_API_URL=https://dummyjson.com
