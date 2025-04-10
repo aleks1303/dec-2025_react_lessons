@@ -1,4 +1,4 @@
-export interface Meta {
+export interface IMeta {
     createdAt: string;
     updatedAt: string;
     barcode: string;

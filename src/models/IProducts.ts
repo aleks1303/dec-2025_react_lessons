@@ -1,6 +1,6 @@
-import {Dimensions} from "./IDemensions.ts";
-import {Reviews} from "./IReviews.ts";
-import {Meta} from "./IMeta.ts";
+import {IDimensions} from "./IDemensions.ts";
+import {IReviews} from "./IReviews.ts";
+import {IMeta} from "./IMeta.ts";
 
 
 export interface IProducts {
@@ -16,14 +16,14 @@ export interface IProducts {
   brand: string;
   sku: string;
   weight: number;
-  dimensions: Dimensions;
+  dimensions: IDimensions;
   warrantyInformation: string;
   shippingInformation: string;
   availabilityStatus: string;
-  reviews: Reviews[];
+  reviews: IReviews[];
   returnPolicy: string;
   minimumOrderQuantity: number;
-  meta: Meta;
+  meta: IMeta;
   images: string[];
   thumbnail: string;
 }
