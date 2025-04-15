@@ -1,10 +1,11 @@
 
 
-const App = () => {
+const MainLayout = () => {
     return (
         <div>
+
         </div>
     );
 };
 
-export default App;
+export default MainLayout;
