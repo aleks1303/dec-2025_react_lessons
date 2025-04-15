@@ -17,8 +17,6 @@ const routes = createBrowserRouter([
             {path: 'comments', element: <CommentsPage/>, children: [
                     {path: 'jsonplaceholder', element: <div>comments / jsonplaceholder</div>}
                 ]}
-
-
         ]}
 ])
 
