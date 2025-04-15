@@ -13,8 +13,10 @@ const UserComponent:FC<MyPropsUserType> = ({item}) => {
     }
     return (
         <div>
-            <div>{item.id}. {item.name} {item.username}</div>
-            <button onClick={fnNavigate}></button>
+            {/*<Link to={'details'} state={item}>*/}
+            {/*    <div>{item.id}. {item.name} {item.username}</div>*/}
+            {/*</Link>*/}
+            <button className={'border-1 p-1'} onClick={fnNavigate}>details</button>
         </div>
     );
 };
