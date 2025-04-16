@@ -12,7 +12,7 @@ const UsersDummyComponent = () => {
         })
     }, []);
     return (
-        <div>
+        <div className={'bg-gray-200'}>
             {
                users.map(user => <UserDummyComponent key={user.id} item={user}/>)
             }

@@ -12,7 +12,7 @@ const UsersJsonComponent = () => {
         })
     }, []);
     return (
-        <div>
+        <div className={'bg-yellow-100'}>
             {
                 users.map(user => <UserJsonComponent key={user.id} item={user}/>)
             }

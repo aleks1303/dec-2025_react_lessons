@@ -12,7 +12,7 @@ const CommentsDummyComponent = () => {
         })
     }, []);
     return (
-        <div>
+        <div className={'bg-yellow-100'}>
             {
                 comments.map(comment =>
                     <CommentDummyComponent key={comment.id} item={comment}/>)

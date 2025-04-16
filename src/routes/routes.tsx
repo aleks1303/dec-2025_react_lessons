@@ -9,6 +9,8 @@ import PostsDummyComponent from "../components/posts-components/posts-dymmy-comp
 import PostsJsonComponent from "../components/posts-components/posts-json-components/PostsJsonComponent.tsx";
 import CommentsDummyComponent
     from "../components/comments-components/comments-dummy-components/CommentsDummyComponent.tsx";
+import CommentsJsonComponent
+    from "../components/comments-components/comments-json-components/CommentsJsonComponent.tsx";
 
 const router = createBrowserRouter([
     {path: '/', element: <MainLayout/>, children: [
@@ -21,7 +23,7 @@ const router = createBrowserRouter([
                     {path: 'dummyjson', element: <PostsDummyComponent/>}
                 ]},
             {path: 'comments', element: <CommentsPage/>, children: [
-                    {path: 'jsonplaceholder', element: <div>comments / jsonplaceholder</div>},
+                    {path: 'jsonplaceholder', element: <CommentsJsonComponent/>},
                     {path: 'dummyjson', element: <CommentsDummyComponent/>}
                 ]}
         ]}

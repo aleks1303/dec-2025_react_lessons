@@ -12,7 +12,7 @@ const PostsDummyComponent = () => {
         })
     }, []);
     return (
-        <div>
+        <div className={'bg-lime-100'}>
             {
                 posts.map(post => <PostDummyComponent key={post.id} item={post}/>)
             }

@@ -12,7 +12,7 @@ const PostsJsonComponent = () => {
         })
     }, []);
     return (
-        <div>
+        <div className={'bg-blue-100'}>
             {
                 posts.map(post => <PostJsonComponent key={post.id} item={post}/>)
             }

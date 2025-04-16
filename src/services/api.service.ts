@@ -4,16 +4,21 @@ import {IUsersDummy} from "../models/users-dummy/IUsersDummy.ts";
 import {IPostDummy} from "../models/posts-dummy/IPostDummy.ts";
 import {IPostsJson} from "../models/posts-json/IPostsJson.ts";
 import {ICommentsDummy} from "../models/comments-dummy/ICommentsDummy.ts";
+import {ICommentJson} from "../models/comments-json.ts";
 
 
 const serviceJSPh = {
     getAllUsersJs: async (): Promise<IUserJs[]> => {
       return await  fetch(urlJs.allUsersJs)
-            .then((response) => response.json())
+            .then((response) => response.json());
     },
     getAllPostJson: async (): Promise<IPostsJson[]> => {
       return await  fetch(urlJs.allPostsJs)
-            .then((response) => response.json())
+            .then((response) => response.json());
+    },
+    getAllCommentJson: async (): Promise<ICommentJson[]> => {
+        return await fetch(urlJs.allCommentsJs)
+            .then((response) => response.json());
     }
 }
 
