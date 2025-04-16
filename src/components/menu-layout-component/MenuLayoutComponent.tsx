@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 const MenuLayoutComponent = () => {
     return (
         <>
-            <ul className={'flex justify-around p-5'}>
+            <ul className={'flex justify-around p-5 bg-green-600 text-white text-2xl'}>
                 <li><Link to={'users'}>users</Link></li>
                 <li><Link to={'posts'}>posts</Link></li>
                 <li><Link to={'comments'}>comments</Link></li>
