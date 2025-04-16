@@ -1,6 +1,7 @@
 
 import {FC} from "react";
 import {IPostDummy} from "../../../models/posts-dummy/IPostDummy.ts";
+import PostTagComponent from "./PostTagComponent.tsx";
 
 type PropsPostsDummyType = {
     item: IPostDummy,
@@ -15,8 +16,9 @@ const PostDummyComponent: FC<PropsPostsDummyType> = ({item}) => {
                 <p>body: {item.body}</p>
             </div>
             <div>
-                <ul>
-                    {item.tags.map((tag) => (<li>{tag}</li>))}
+                <ul> tags:
+                    {item.tags.map((tag, index) =>
+                        <PostTagComponent key={index} tag={tag}/>)}
                 </ul>
             </div>
             <div>
