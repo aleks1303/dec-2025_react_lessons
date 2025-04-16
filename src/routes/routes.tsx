@@ -5,7 +5,7 @@ import PostsPage from "../pages/PostsPage.tsx";
 import CommentsPage from "../pages/CommentsPage.tsx";
 import UsersJsonComponent from "../components/users-components/users-json-components/UsersJsonComponent.tsx";
 import UsersDummyComponent from "../components/users-components/users-dummy-components/UsersDummyComponent.tsx";
-import PostsDummyComponent from "../components/posts-components/posts-dymmy-components/post-dummy-components/PostsDummyComponent.tsx";
+import PostsDummyComponent from "../components/posts-components/posts-dymmy-components/PostsDummyComponent.tsx";
 
 const router = createBrowserRouter([
     {path: '/', element: <MainLayout/>, children: [
