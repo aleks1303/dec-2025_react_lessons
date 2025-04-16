@@ -16,9 +16,8 @@ const PostDummyComponent: FC<PropsPostsDummyType> = ({item}) => {
                 <p>body: {item.body}</p>
             </div>
             <div>
-                <ul>tags: {item.tags.map((tag) => (
-                    <li> - {tag}</li>
-                ))}</ul>
+                <ul>
+                </ul>
             </div>
             <div>
                 <ul> reactions:
