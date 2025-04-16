@@ -1,5 +1,5 @@
-import MenuUsersComponent from "../components/users-components/menu-components/MenuUsersComponent.tsx";
 import {Outlet} from "react-router-dom";
+import MenuUsersComponent from "../components/users-components/menu-users-component/MenuUsersComponent.tsx";
 
 
 const UsersPage = () => {

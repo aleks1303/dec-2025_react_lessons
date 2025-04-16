@@ -1,9 +1,14 @@
+import {Outlet} from "react-router-dom";
+import MenuCommentsComponent
+    from "../components/comments-components/menu-comments-components/MenuCommentsComponent.tsx";
 
 
 const CommentsPage = () => {
     return (
         <div>
-            Comments Page
+            <MenuCommentsComponent/>
+            <hr/>
+            <Outlet/>
         </div>
     );
 };
