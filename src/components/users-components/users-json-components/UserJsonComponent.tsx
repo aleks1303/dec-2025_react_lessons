@@ -4,7 +4,7 @@ import {FC} from "react";
 type MyPropsUsersTypeJs = {
     item: IUserJs
 }
-const UserJSComponent: FC<MyPropsUsersTypeJs> = ({item}) => {
+const UserJsonComponent: FC<MyPropsUsersTypeJs> = ({item}) => {
     return (
         <div className={'flex border-1 p-2'}>
             <h2 className={'flex-1/5 mr-5'}>{item.id}. {item.name} {item.username}</h2>
@@ -37,7 +37,7 @@ const UserJSComponent: FC<MyPropsUsersTypeJs> = ({item}) => {
     );
 };
 
-export default UserJSComponent;
+export default UserJsonComponent;
 
 
 // "id": 1,

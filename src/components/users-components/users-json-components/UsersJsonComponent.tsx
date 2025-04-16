@@ -1,10 +1,10 @@
 import {useEffect, useState} from "react";
 import {IUserJs} from "../../../models/users-js/IUserJs.ts";
 import {serviceJSPh} from "../../../services/api.service.ts";
-import UserJSComponent from "./UserJSComponent.tsx";
+import UserJsonComponent from "./UserJsonComponent.tsx";
 
 
-const UsersJSComponent = () => {
+const UsersJsonComponent = () => {
     const [users, setUsers] = useState<IUserJs[]>([]);
     useEffect(() => {
         serviceJSPh.getAllUsersJs().then(response => {
@@ -14,10 +14,10 @@ const UsersJSComponent = () => {
     return (
         <div>
             {
-                users.map(user => <UserJSComponent key={user.id} item={user}/>)
+                users.map(user => <UserJsonComponent key={user.id} item={user}/>)
             }
         </div>
     );
 };
 
-export default UsersJSComponent;
+export default UsersJsonComponent;
