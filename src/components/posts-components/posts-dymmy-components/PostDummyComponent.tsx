@@ -9,25 +9,24 @@ type PropsPostsDummyType = {
 
 const PostDummyComponent: FC<PropsPostsDummyType> = ({item}) => {
     return (
-        <div>
-            <div>
-                <p>id: {item.id}</p>
-                <p>title: {item.title}</p>
+        <div className={'flex border-1 p-2 '}>
+            <div className={'flex-1/2 mr-4'}>
+                <p>id: {item.id}.  Title: {item.title}</p>
                 <p>body: {item.body}</p>
             </div>
-            <div>
+            <div className={'flex-1/8 mr-4'}>
                 <ul> tags:
                     {item.tags.map((tag, index) =>
                         <PostTagComponent key={index} tag={tag}/>)}
                 </ul>
             </div>
-            <div>
+            <div className={'flex-1/8 mr-4'}>
                 <ul> reactions:
                     <li>likes: {item.reactions.likes}</li>
                     <li>dislikes: {item.reactions.dislikes}</li>
                 </ul>
             </div>
-            <div>
+            <div className={'flex-1/8 mr-4'}>
                 <p>views: {item.views}</p>
                 <p>userId: {item.userId}</p>
             </div>
