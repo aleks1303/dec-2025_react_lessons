@@ -4,7 +4,6 @@ import {IPostDummy} from "../../../models/posts-dummy/IPostDummy.ts";
 
 type PropsPostsDummyType = {
     item: IPostDummy,
-    tags: string[]
 }
 
 const PostDummyComponent: FC<PropsPostsDummyType> = ({item}) => {
@@ -17,6 +16,7 @@ const PostDummyComponent: FC<PropsPostsDummyType> = ({item}) => {
             </div>
             <div>
                 <ul>
+                    {item.tags.map((tag) => (<li>{tag}</li>))}
                 </ul>
             </div>
             <div>
