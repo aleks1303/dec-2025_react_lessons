@@ -9,7 +9,7 @@ type PropsUserType = {
 const UserComponent: FC<PropsUserType> = ({item}) => {
     const navigate = useNavigate();
     const handleNavigate = () => {
-        navigate('users/' + item.id + '/carts', {state: {item}})
+        navigate('/users/' + item.id + '/carts', {state: {item}})
     }
     return (
 

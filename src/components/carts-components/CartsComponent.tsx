@@ -3,6 +3,7 @@ import {ICart} from "../../models/cart-models/ICart.ts";
 import {useParams} from "react-router-dom";
 import {ICartGeneral} from "../../models/cart-models/ICartGeneral.ts";
 import {serviceApi} from "../../services/api.service.tsx";
+import CartComponent from "./CartComponent.tsx";
 
 
 const CartsComponent = () => {
@@ -20,7 +21,7 @@ const CartsComponent = () => {
     return (
         <div>
             {
-                carts.map(cart => (<div>{cart.total}</div>))
+                carts.map(cart => <CartComponent key={cart.id} item={cart}/>)
             }
         </div>
     );
