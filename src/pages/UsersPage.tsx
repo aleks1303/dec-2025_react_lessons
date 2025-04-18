@@ -4,10 +4,10 @@ import {Outlet} from "react-router-dom";
 
 const UsersPage = () => {
     return (
-        <div>
+        <div className={'flex'}>
             <UsersComponent/>
            <hr/>
-            <Outlet/>
+            <div className={'ml-40'}><Outlet/></div>
         </div>
     );
 };
