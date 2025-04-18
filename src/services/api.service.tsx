@@ -13,7 +13,7 @@ const userService = {
 }
 const cartService = {
     getCartOfUser: async (userId: string): Promise<ICart[]> => {
-       const {carts} = await fetch('https://dummyjson.com/carts/user/' + userId)
+       const {carts} = await fetch(baseUrl +'/carts/user/' + userId)
             .then(res => res.json())
         return carts
     }
