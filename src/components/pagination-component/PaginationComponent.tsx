@@ -3,7 +3,7 @@ import {useSearchParams} from "react-router-dom";
 
 const PaginationComponent = () => {
     const [query, setQuery] = useSearchParams({asd: '1'});
-    const page = query.get('page')
+    const page = query.get('asd')
     const onClickPrev = () => {
         if (page) {
           let currencyPage = Number(page)
