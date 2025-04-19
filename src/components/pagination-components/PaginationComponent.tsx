@@ -20,12 +20,12 @@ const PaginationComponent = () => {
         }
     }
     const buttonClass = 'border-1 w-15 p-3';
-    const buttonDisabled = 'opacity-50'
+    const buttonDisabled = 'opacity-50 cursor-not-allowed'
 
     return (
         <div>
             <button className={`${buttonClass} ${pageNum <= 1 ? buttonDisabled : ''}}`} disabled={pageNum <= 1} onClick={onClickPrev}>prev</button>
-            <button className={`${buttonClass} ${pageNum >=42 ? buttonDisabled : ''}}`}  disabled={pageNum >= 42} onClick={onClickNext}>next</button>
+            <button className={`${buttonClass} ${pageNum >=7 ? buttonDisabled : ''}}`}  disabled={pageNum >= 7} onClick={onClickNext}>next</button>
         </div>
     );
 };
