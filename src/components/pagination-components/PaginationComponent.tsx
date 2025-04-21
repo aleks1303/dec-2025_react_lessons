@@ -36,7 +36,7 @@ const onClickPrev = () => {
             {[...Array(totalPages)].map((_, i) => {
                 const num = i + 1
                 return (
-                    <button className={`${baseClass} ${pageNum === num ? activeClass: ''}}`} onClick={() => onClickNumbers(num)}
+                    <button key={num} className={`${baseClass} ${pageNum === num ? activeClass: ''}}`} onClick={() => onClickNumbers(num)}
                     >{num}</button>
                 )
             })}
