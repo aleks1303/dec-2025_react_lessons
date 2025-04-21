@@ -1,9 +1,10 @@
+import FormComponent from "./components/FormComponent.tsx";
 
 
 const App = () => {
     return (
         <div>
-        Hello world!
+       <FormComponent/>
         </div>
     );
 };
