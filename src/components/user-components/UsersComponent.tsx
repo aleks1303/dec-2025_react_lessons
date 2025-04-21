@@ -6,7 +6,7 @@ import {userService} from "../../services/api.service.tsx";
 
 const UsersComponent = () => {
     const [query] = useSearchParams({page:'1'});
-    const [users, setUsers] = useState<IUser[]>([]);
+    const [users, setUsers] = useState<IUserJson[]>([]);
     useEffect(() => {
         const page = query.get('page') || '1' ;
             userService.getAllUsers(page)
@@ -17,7 +17,7 @@ const UsersComponent = () => {
     return (
         <div>
             {
-                users.map(user => ( <div>{user.id}. {user.firstName} {user.lastName}</div>))
+                users.map(user => ( <div></div>))
             }
         </div>
     );
