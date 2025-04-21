@@ -2,6 +2,7 @@ import {useSearchParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {IUser} from "../../models/IUser.ts";
 import {userService} from "../../services/api.service.tsx";
+import UserComponent from "./UserComponent.tsx";
 
 
 const UsersComponent = () => {
@@ -17,7 +18,7 @@ const UsersComponent = () => {
     return (
         <div>
             {
-                users.map(user => ( <div></div>))
+                users.map(user => ( <UserComponent key={user.id} item={user}/>))
             }
         </div>
     );
