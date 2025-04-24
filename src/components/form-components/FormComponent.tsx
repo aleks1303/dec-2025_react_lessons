@@ -3,7 +3,7 @@ import {ICar} from "../../models/ICar.ts";
 
 
 const FormComponent = () => {
-    const {register, handleSubmit, formState: {errors, isValid}} = useForm<ICar>();
+    const {register, handleSubmit} = useForm<ICar>();
     const createCar = (formData: ICar) => {
         console.log(formData)
     }
