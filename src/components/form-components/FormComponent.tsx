@@ -9,10 +9,10 @@ const FormComponent = () => {
     }
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <input type="text"/>
-                <input type="text"/>
-                <input type="text"/>
+            <form onSubmit={handleSubmit(createCar)}>
+                <input type="text" {...register('brand')}/>
+                <input type="text" {...register('price')} />
+                <input type="text"{...register('year')}/>
             </form>
         </div>
     );
