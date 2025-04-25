@@ -9,14 +9,20 @@ const axiosInstance = axios.create({
 })
 
 const getAllCars = async ():Promise<ICar[]> => {
-  return await  axiosInstance.get('/cars')
-      .then(value => value.data)
+ const {data} = await  axiosInstance.get('/cars');
+ return data
+
+}
+const addCar = async (car: ICar) => {
+ return  await  axiosInstance.post('/cars', car)
 }
 
-
-
+export const deleteCarById = async (id: number) => {
+    return await axiosInstance.delete(`/cars/` + id);
+};
 
 
 export {
-    getAllCars
+    getAllCars,
+    addCar
 }
