@@ -1,13 +1,8 @@
 import {useEffect} from "react";
-import {login} from "../../services/api.service.tsx";
 
 const LoginComponent = () => {
     useEffect(() => {
-        login({
-            username:'jamesd',
-            password: 'amesdpass',
-            expiresInMins:1
-        })
+
     }, []);
     return (
         <div>
