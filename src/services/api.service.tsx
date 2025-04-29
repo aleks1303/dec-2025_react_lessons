@@ -22,6 +22,6 @@ export const login = async ({username, password, expiresInMins}: LoginData): Pro
 }
 
 export const loadAuthPosts = async (): Promise<IPost[]> => {
-const {data: {posts}} = await  axiosInstance.get<IPostModelType>('/posts');
-return posts
+const {data} = await  axiosInstance.get<IPostModelType>('/posts');
+return data.posts
 }
