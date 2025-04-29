@@ -4,7 +4,11 @@ import {login} from "../../services/api.service.tsx";
 
 const LoginComponent = () => {
     useEffect(() => {
-        login()
+        login({
+            username: 'jamesd',
+            password: 'jamesdpass',
+            expiresInMins: 1
+        })
     }, []);
     return (
         <div>

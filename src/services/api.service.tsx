@@ -6,8 +6,14 @@ const axiosInstance = axios.create({
     headers: {}
 })
 
+type LoginData = {
+    username: string,
+    password: string,
+    expiresInMins: number
+}
 
 
-export const login = async (): Promise<IUser[]> => {
-    await axiosInstance.post<IUser>('user')
+export const login = async ({username, password, expiresInMins}: LoginData): Promise<IUser[]> => {
+   const {data} = await axiosInstance.post<IUser>('/login')
+
 }
