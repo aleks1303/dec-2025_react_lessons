@@ -1,6 +1,8 @@
 import axios from "axios";
 import {LoginData} from "../models/LoginData.ts";
 import {IUserWithTokens} from "../models/IUserWithTokens.ts";
+import {IPost} from "../models/IPost.ts";
+import {IPostModelType} from "../models/IPostModelType.ts";
 
 
 
@@ -19,6 +21,7 @@ export const login = async ({username, password, expiresInMins}: LoginData): Pro
     return userWithTokens
 }
 
-export const loadAuthPosts = () => {
-
+export const loadAuthPosts = async (): Promise<IPost[]> => {
+const {data: {posts}} = await  axiosInstance.get<IPostModelType>('/posts');
+return posts
 }
