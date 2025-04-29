@@ -13,7 +13,7 @@ type loginData = {
     expiresInMins: number
 }
 
-export const login = async ({username, password, expiresInMins}: loginData): Promise<IUserWithToken[]> => {
+export const login = async ({username, password, expiresInMins}: loginData): Promise<IUserWithToken> => {
   const {data: userWithTokens} = await axiosInstance.post('/login', {username, password, expiresInMins});
   localStorage.setItem('user', JSON.stringify(userWithTokens))
     console.log(userWithTokens)
