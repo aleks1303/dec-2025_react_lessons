@@ -19,3 +19,9 @@ export const login = async ({username, password, expiresInMins}: loginData): Pro
     console.log(userWithTokens)
    return userWithTokens
 }
+// export const login = async ({username, password, expiresInMins}: loginData): Promise<IUserWithTokens> => {
+//     const {data: userWithTokens} = await  axiosInstance.post('/login', {username, password, expiresInMins});
+//     localStorage.setItem('user', JSON.stringify(userWithTokens))
+//     console.log(userWithTokens)
+//     return userWithTokens
+// }
