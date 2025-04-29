@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {loadAuthProducts} from "../../services/api.service.tsx";
+import {loadAuthProducts, refresh} from "../../services/api.service.tsx";
 import {IProduct} from "../../models/IProduct.ts";
 
 const AuthResourcesComponent = () => {
@@ -7,12 +7,18 @@ const AuthResourcesComponent = () => {
     useEffect(() => {
         loadAuthProducts().then(response => {
             setProducts(response)
+        }).catch( reason => {
+            console.log(reason);
+            refresh().then(() => loadAuthProducts().then(response => {
+                    setProducts(response)
+                })
+            )
         })
     }, []);
     return (
         <div>
             {
-                products.map(product => (<div>{product.title}</div>))
+                products.map(product => (<div key={product.id}>{product.title}</div>))
             }
         </div>
     );
