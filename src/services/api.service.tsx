@@ -16,13 +16,13 @@ export const getLocalStorage = <T,> (key: string) => {
     if(!object) {
         return {} as T
     }
-    const parse = JSON.parse(object).accessToken
+    const parse = JSON.parse(object)
     return parse as T
 }
 
 axiosInstance.interceptors.request.use((requestObject) => {
     if(requestObject.method?.toUpperCase() === "GET") {
-        requestObject.headers.Authorization = 'Bearer ' + getLocalStorage('user')
+        requestObject.headers.Authorization = 'Bearer ' + getLocalStorage<IUserWithTokens>('user').accessToken
     }
     return requestObject
 })
@@ -36,22 +36,44 @@ export const login = async ({username, password, expiresInMins}: LoginData): Pro
     return userWithTokens
 }
 
-export const loadAuthPosts = async ():Promise<IPost[]> => {
-  const {data: {posts} } = await axiosInstance.get<IPostModelType>('/posts')
+
+
+export const loadAuthPosts = async (): Promise<IPost[]> => {
+    const {data: {posts}} = await axiosInstance.get<IPostModelType>('/posts');
     return posts
 }
 
 
 export const refresh = async () => {
-  const userWithTokens =  getLocalStorage<IUserWithTokens>('user')
-   const {data:{accessToken, refreshToken}} = await axiosInstance.post<ITokensPair>('/refresh',
-       {refreshToken:userWithTokens.refreshToken, expiresInMins: 1});
-    userWithTokens.accessToken = accessToken;
-    userWithTokens.refreshToken = refreshToken;
-    console.log(accessToken)
-    console.log(refreshToken)
-    localStorage.setItem('user', JSON.stringify(userWithTokens));
+
+    const iUserWithTokens = getLocalStorage<IUserWithTokens>('user');
+    const {data: {accessToken, refreshToken}} = await axiosInstance.post<ITokensPair>('/refresh', {
+        refreshToken: iUserWithTokens.refreshToken,
+        expiresInMin: 1
+    });
+    iUserWithTokens.accessToken = accessToken;
+    iUserWithTokens.refreshToken = refreshToken;
+    localStorage.setItem('user', JSON.stringify(iUserWithTokens));
+
+
 }
+
+// export const loadAuthPosts = async ():Promise<IPost[]> => {
+//   const {data: {posts} } = await axiosInstance.get<IPostModelType>('/posts')
+//     return posts
+// }
+//
+//
+// export const refresh = async () => {
+//   const userWithTokens =  getLocalStorage<IUserWithTokens>('user')
+//    const {data:{accessToken, refreshToken}} = await axiosInstance.post<ITokensPair>('/refresh',
+//        {refreshToken:userWithTokens.refreshToken, expiresInMins: 1});
+//     userWithTokens.accessToken = accessToken;
+//     userWithTokens.refreshToken = refreshToken;
+//     console.log(accessToken)
+//     console.log(refreshToken)
+//     localStorage.setItem('user', JSON.stringify(userWithTokens));
+// }
 
 
 
