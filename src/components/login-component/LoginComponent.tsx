@@ -1,8 +1,9 @@
 import {useForm} from "react-hook-form";
+import {IUserWithToken} from "../../models/IUser.ts";
 
 
 const LoginComponent = () => {
-    const {} = useForm<>({mode:'all'});
+    const {handleSubmit, register, formState{}} = useForm<IUserWithToken>({mode:'all'});
     return (
         <div>
 
