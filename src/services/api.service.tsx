@@ -35,7 +35,7 @@ export const loadAuthComments = async (): Promise<IComment[]> => {
 
 
 export const refresh = async () => {
-    const user = localStorage.getItem('user');
+    const user = localStorage.getItem<IUserWithTokens>('user');
    const {data: {accessToken, refreshToken}} =  await axiosInstance.post<ITokenPair>('/refresh', {refreshToken: user, expiresInMins: 1})
 }
 
