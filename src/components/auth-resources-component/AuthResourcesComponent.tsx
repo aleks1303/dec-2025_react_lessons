@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {loadAuthComments} from "../../services/api.service.tsx";
+import {loadAuthComments, refresh} from "../../services/api.service.tsx";
 import {IComment} from "../../models/IComment.ts";
 import AuthResourceComponent from "./AuthResourceComponent.tsx";
 
@@ -9,6 +9,12 @@ const AuthResourcesComponent = () => {
     useEffect(() => {
         loadAuthComments().then(response => {
             setComments(response)
+        }).catch(reason => {
+            console.log(reason)
+            refresh()
+                .then(() => loadAuthComments())
+                .then(response => setComments(response))
+
         })
     }, []);
     return (
