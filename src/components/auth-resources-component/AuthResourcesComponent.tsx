@@ -1,12 +1,20 @@
 import {useEffect} from "react";
-import {loadAuthTodos} from "../../services/api.service.tsx";
+import {loadAuthTodos, refresh} from "../../services/api.service.tsx";
 
 
 const AuthResourcesComponent = () => {
     useEffect(() => {
         loadAuthTodos().then(response => {
             console.log(response)
-        })
+        }).catch(reason => {
+                console.log(reason)
+                refresh()
+                    .then(() => loadAuthTodos())
+                    .then(response => {
+                        console.log(response)
+                    })
+            }
+        )
     }, []);
     return (
         <div>
