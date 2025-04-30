@@ -6,15 +6,16 @@ import {ITodos} from "../models/ITodos.ts";
 
 const axiosInstance = axios.create({
     baseURL: 'https://dummyjson.com/auth',
-    headers: {'Content-Type': 'application/json'}
+    headers: {}
 })
 
 
 const getUserFromLS = <T,> (key: string) => {
-    const object = localStorage.getItem(key) || ''
+    const object = localStorage.getItem(key) || '';
     if (!object) {
         return {} as T
-    } const parse = JSON.parse(object)
+    }
+    const parse = JSON.parse(object)
     return parse as T
 
 }
