@@ -4,7 +4,9 @@ import {loadAuthTodos} from "../../services/api.service.tsx";
 
 const AuthResourcesComponent = () => {
     useEffect(() => {
-        loadAuthTodos()
+        loadAuthTodos().then(response => {
+            console.log(response)
+        })
     }, []);
     return (
         <div>
