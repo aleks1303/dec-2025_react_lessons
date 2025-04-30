@@ -3,6 +3,7 @@ import {LoginData} from "../models/LoginData.ts";
 import {IUserWithTokens} from "../models/IUserWithTokens.ts";
 import {IPost} from "../models/IPost.ts";
 import {IPostModelType} from "../models/IPostModelType.ts";
+import {ITokensPair} from "../models/ITokensPair.ts";
 
 
 const axiosInstance = axios.create({
@@ -28,9 +29,6 @@ axiosInstance.interceptors.request.use((requestObject) => {
 
 
 
-
-
-
 export const login = async ({username, password, expiresInMins}: LoginData): Promise<IUserWithTokens> => {
   const {data: userWithTokens} = await axiosInstance.post('/login', {username, password, expiresInMins});
     localStorage.setItem('user', JSON.stringify(userWithTokens))
@@ -43,6 +41,17 @@ export const loadAuthPosts = async ():Promise<IPost[]> => {
     return posts
 }
 
+
+export const refresh = async () => {
+  const userWithTokens =  getLocalStorage<IUserWithTokens>('user')
+   const {data:{accessToken, refreshToken}} = await axiosInstance.post<ITokensPair>('/refresh',
+       {refreshToken:userWithTokens.refreshToken, expiresInMins: 1});
+    userWithTokens.accessToken = accessToken;
+    userWithTokens.refreshToken = refreshToken;
+    console.log(accessToken)
+    console.log(refreshToken)
+    localStorage.setItem('user', JSON.stringify(userWithTokens));
+}
 
 
 
