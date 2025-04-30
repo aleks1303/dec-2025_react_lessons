@@ -10,7 +10,7 @@ const axiosInstance = axios.create({
 })
 
 
-const getUserFromLS = <T,> (key: string) => {
+export const getUserFromLS = <T,> (key: string) => {
     const object = localStorage.getItem(key) || '';
     if (!object) {
         return {} as T
