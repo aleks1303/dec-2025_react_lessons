@@ -4,7 +4,7 @@ import {login} from "../../services/api.service.tsx";
 
 const LoginComponent = () => {
     const {handleSubmit, register} = useForm<ILoginData>();
-    const handleForm = async (data: FormData) => {
+    const handleForm = async (data: ILoginData) => {
         try {
             const user = await login({...data, expiresInMins:1})
             console.log('Успіх', user)
@@ -13,17 +13,18 @@ const LoginComponent = () => {
         }
     }
 
-
+    const classInput = 'border-1 w-40 m-2 block'
+    const classButton = 'border-1 w-20 m-2 block'
     return (
         <div>
             <form onSubmit={handleSubmit(handleForm)}>
-                <label>
-                    <input type="text"/>
+                <label htmlFor={'username'}>username
+                    <input className={classInput} type="text" {...register('username')} />
                 </label>
-                <label>
-                    <input type="text"/>
+                <label htmlFor={'password'}>password
+                    <input className={classInput} type="text" {...register('password')} />
                 </label>
-                <button>sign in</button>
+                <button className={classButton}>sign in</button>
             </form>
         </div>
     );
