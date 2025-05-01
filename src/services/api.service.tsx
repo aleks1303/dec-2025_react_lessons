@@ -32,9 +32,10 @@ export const loadAuthUsers = async (): Promise<IUser[]> => {
     return users
 }
 
-export const refresh = () => {
+export const refresh = async () => {
     const user = getLocalStorage<IUserWithToken>('user')
-    const {accessToken, refreshToken} = axiosInstance.post('/refresh', {refreshToken:user.refreshToken, expiresInMins:1});
-    user.accessToken = accessToken;
-    user.refreshToken = refreshToken
+    const {data: {accessToken, refreshToken}} = await axiosInstance.post<ITokenPair>('/refresh', {refreshToken:user.refreshToken, expiresInMins:1});
+   user.accessToken = accessToken;
+   user.refreshToken = refreshToken
+    localStorage.setItem('user', JSON.stringify(user))
 }

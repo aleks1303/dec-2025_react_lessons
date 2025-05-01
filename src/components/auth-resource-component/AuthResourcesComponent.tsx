@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {IUser} from "../../models/IUser.ts";
-import {loadAuthUsers} from "../../services/api.service.tsx";
+import {loadAuthUsers, refresh} from "../../services/api.service.tsx";
 import AuthResourceComponent from "./AuthResourceComponent.tsx";
 
 
@@ -9,6 +9,11 @@ const AuthResourcesComponent = () => {
     useEffect(() => {
         loadAuthUsers().then(response => {
             setUsers(response)
+        }).catch(reason => {
+            console.log(reason)
+            refresh()
+                .then(() => loadAuthUsers())
+                .then(response => setUsers(response))
         })
     }, []);
     return (
