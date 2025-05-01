@@ -17,10 +17,6 @@ const LoginComponent = () => {
        }
    }
 
-
-
-
-
     // const {handleSubmit, register} = useForm<LoginData>({mode:'all'});
     //
     // const handleForm = async (data: LoginData) => {
@@ -36,7 +32,9 @@ const LoginComponent = () => {
     return (
         <div>
             <form onSubmit={handleSubmit(handleForm)}>
+                <label htmlFor={'username'}>username</label>
                 <input className={classInput} type="text" {...register('username')} />
+                <label htmlFor={'password'}>password</label>
                 <input className={classInput} type="text" {...register('password')} />
                 <button className={classInput}>sign in</button>
             </form>
