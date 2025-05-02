@@ -2,7 +2,6 @@ import axios from "axios";
 import {ILoginData} from "../models/ILoginData.ts";
 import {IUserWithToken} from "../models/IUserWithToken.ts";
 import {IQuote} from "../models/IQuote.ts";
-import {IQuotesBase} from "../models/IQuotesBase.ts";
 import {getUserLocalStorage} from "./helpers.tsx";
 import {ITokenPair} from "../models/ITokenPair.ts";
 
@@ -32,7 +31,7 @@ export const loginOut =() => {
 export const loadAuthQuotes = async (page: string): Promise<IQuote[]> => {
     const limit = 30
     const skip = ((+page) -1) * limit
-    const {data: {quotes}} = await axiosInstance.get<IQuotesBase>(`/quotes?skip=${skip}&limit=${limit}`);
+    const {data: {quotes}} = await axiosInstance.get(`/quotes?skip=${skip}&limit=${limit}`);
     return quotes
 }
 

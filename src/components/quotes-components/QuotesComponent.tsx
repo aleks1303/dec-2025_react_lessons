@@ -22,7 +22,7 @@ const QuotesComponent = () => {
                     })
             }
         )
-    }, []);
+    }, [query]);
     return (
         <div>
             {
