@@ -1,6 +1,6 @@
 import {useForm} from "react-hook-form";
 import {ILoginData} from "../../models/ILoginData.ts";
-import {login} from "../../services/api.service.tsx";
+import {login, loginOut} from "../../services/api.service.tsx";
 
 const LoginComponent = () => {
     const {handleSubmit, register} = useForm<ILoginData>();
@@ -13,18 +13,19 @@ const LoginComponent = () => {
         }
     }
 
-    const classInput = 'border-1 w-40 m-2 block'
-    const classButton = 'border-1 w-20 m-2 block'
+    const classInput = 'border-1 w-40 m-2 block';
+    const classLabel = 'justify-center flex'
     return (
-        <div>
+        <div className={'flex justify-center'}>
             <form onSubmit={handleSubmit(handleForm)}>
-                <label htmlFor={'username'}>username
-                    <input className={classInput} type="text" {...register('username')} />
+                <label className={classLabel} htmlFor={'username'}>username
                 </label>
-                <label htmlFor={'password'}>password
-                    <input className={classInput} type="text" {...register('password')} />
+                <input className={classInput} type="text" {...register('username')} />
+                <label className={classLabel} htmlFor={'password'}>password
                 </label>
-                <button className={classButton}>sign in</button>
+                <input className={classInput} type="text" {...register('password')} />
+                <button className={classInput}>sign in</button>
+                <button className={classInput} onClick={loginOut}>Exit</button>
             </form>
         </div>
     );
