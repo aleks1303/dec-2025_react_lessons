@@ -29,8 +29,10 @@ export const loginOut =() => {
     return  localStorage.removeItem('user');
 }
 
-export const loadAuthQuotes = async (): Promise<IQuote[]> => {
-    const {data: {quotes}} = await axiosInstance.get<IQuotesBase>('/quotes');
+export const loadAuthQuotes = async (page: string): Promise<IQuote[]> => {
+    const limit = 30
+    const skip = limit * (+page) - limit
+    const {data: {quotes}} = await axiosInstance.get<IQuotesBase>('/quotes?'+ skip);
     return quotes
 }
 
