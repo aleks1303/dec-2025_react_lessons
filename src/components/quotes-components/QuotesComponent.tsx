@@ -7,12 +7,12 @@ import QuoteComponent from "./QuoteComponent.tsx";
 const QuotesComponent = () => {
     const [quotes, setQuotes] = useState<IQuote[]>([])
     useEffect(() => {
-        loadAuthQuotes().then(response => {
+        loadAuthQuotes(page).then(response => {
             setQuotes(response)
         }).catch(reason => {
                 console.log(reason)
                 refresh()
-                    .then(() => loadAuthQuotes())
+                    .then(() => loadAuthQuotes(page))
                     .then(response => {
                         setQuotes(response)
                     })

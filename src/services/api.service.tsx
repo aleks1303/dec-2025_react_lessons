@@ -31,10 +31,15 @@ export const loginOut =() => {
 
 export const loadAuthQuotes = async (page: string): Promise<IQuote[]> => {
     const limit = 30
-    const skip = limit * (+page) - limit
-    const {data: {quotes}} = await axiosInstance.get<IQuotesBase>('/quotes?'+ skip);
+    const skip = ((+page) -1) * limit
+    const {data: {quotes}} = await axiosInstance.get<IQuotesBase>(`/quotes?skip=${skip}&limit=${limit}`);
     return quotes
 }
+
+//     const limit = 30
+//         const skip = ((+page) - 1) * limit
+//       const {users} = await  fetch(baseUrl + `/users?skip=${skip}&limit=${limit}`)
+//             .then(res => res.json())
 
 export const refresh = async () => {
     const user = getUserLocalStorage()
