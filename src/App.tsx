@@ -1,9 +1,10 @@
+import UsersComponent from "./component/UsersComponent.tsx";
 
 
 const App = () => {
     return (
         <div>
-        Hello world!
+      <UsersComponent/>
         </div>
     );
 };
