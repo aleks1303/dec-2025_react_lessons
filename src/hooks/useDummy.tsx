@@ -6,7 +6,7 @@ export const useDummy = <T,>(url: string, defaultValue:T) => {
         fetch(url)
             .then(res => res.json())
             .then(response => {
-                setUsers(response.users)
+                setUsers(response)
             });
     }, [url]);
     return users

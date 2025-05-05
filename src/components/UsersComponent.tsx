@@ -1,9 +1,9 @@
 import {useDummy} from "../hooks/useDummy.tsx";
-import {IUser} from "../models/IUser.ts";
+import {IUserBase} from "../models/IUserModel/IUserBase.ts";
 
 
 const UsersComponent = () => {
-    const users = useDummy<IUser[]>('https://dummyjson.com/users', []);
+    const {users} = useDummy<IUserBase>('https://dummyjson.com/users', {users:[], limit:0, skip:0, total: 0});
     return (
         <div>
             {
