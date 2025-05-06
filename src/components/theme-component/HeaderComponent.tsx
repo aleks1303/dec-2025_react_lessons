@@ -12,6 +12,7 @@ const HeaderComponent = () => {
     }
     const handlerBlack = () => {
         changeTheme('dark')
+
     }
     return (
         <div className={'flex justify-center'}>
@@ -25,7 +26,7 @@ const HeaderComponent = () => {
                     <img className={'w-7'} src="src/icons/icons8-dark-48.png" alt="dark"/>
                 </button>
                 <button onClick={handlerLight}>
-                    <img className={'w-7'} src="src/icons/icons8-sun-48.png" alt="sun"/>
+                    <img className={'w-7'} src="src/icons/icons8-light-64%20.png" alt="sun"/>
                 </button>
             </div>
         </div>
