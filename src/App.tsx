@@ -1,9 +1,10 @@
+import MainComponent from "./components/main-component/MainComponent.tsx";
 
 
 const App = () => {
     return (
         <div>
-        Hello world!
+        <MainComponent/>
         </div>
     );
 };
