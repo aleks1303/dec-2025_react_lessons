@@ -6,13 +6,16 @@ import {useContext, useState} from "react";
 
 const App = () => {
     const [themeValue, setThemeValue] = useState('light')
-
+    const {theme} = useContext(MyContext)
     return (
         <div>
 
-            <MyContext.Provider value={
-
-
+            <MyContext.Provider value={{
+                theme: themeValue,
+                changeTheme: (themeValue:string) => {
+                   setThemeValue(themeValue)
+                }
+            }
             }>
                 <HeaderComponent/>
                 <MainComponent/>
