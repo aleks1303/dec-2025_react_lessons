@@ -1,4 +1,17 @@
+import {useMemo} from "react";
+
 const InfoComponent = () => {
+
+const memo = useMemo(() => {
+                for (let i = 0; i < 10; i++) {
+                        console.log('I am working')
+        }
+                return null
+}, [])
+        console.log(memo)
+
+
+
     return (
         <div>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto illo ipsam ratione sint tempore,
