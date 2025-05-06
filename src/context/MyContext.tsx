@@ -5,9 +5,8 @@ type MyContextType = {
     changeTheme: (theme:string) => void
 }
 
-export const MyContextObject = () => {
+export const MyContextObject: MyContextType = () => {
 
-}
 
 
 export const MyContext = createContext<MyContextType>({});
