@@ -1,7 +1,10 @@
 import {IUser} from "../models/interfaces/IUser.ts";
 
+const baseUrl = 'https://jsonplaceholder.typicode.com'
+
+
 export const getAllUsers = async ():Promise<IUser[]> => {
-  return await  fetch('https://jsonplaceholder.typicode.com/users')
+  return await  fetch(baseUrl + '/users')
         .then((response) => response.json())
 }
 
@@ -10,7 +13,7 @@ export const getAllUsers = async ():Promise<IUser[]> => {
 
 export const postService = {
     getAllPosts: async () => {
-     return await fetch('https://jsonplaceholder.typicode.com/posts')
+     return await fetch(baseUrl + '/posts')
             .then((response) => response.json())
     }
 }
