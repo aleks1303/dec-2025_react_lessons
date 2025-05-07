@@ -36,6 +36,4 @@ export const store = configureStore({
     }
 });
 
-
-
 export const useAppSelector = useSelector.withTypes<ReturnType<typeof store.getState>>();
