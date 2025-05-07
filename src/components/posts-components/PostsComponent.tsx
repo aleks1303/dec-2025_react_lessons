@@ -13,7 +13,6 @@ const PostsComponent = () => {
                 dispatch(postSliceActions.loadPost(response))
             });
     }, [dispatch]);
-
     return (
         <div>
             {
