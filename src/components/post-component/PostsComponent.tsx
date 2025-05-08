@@ -1,19 +1,16 @@
-import {postSliceActions, useAppSelector} from "../../main.tsx";
-import {useDispatch} from "react-redux";
 import {useEffect} from "react";
-import {postService} from "../../services/api.service.tsx";
 import PostComponent from "./PostComponent.tsx";
+import {useAppSelector} from "../../redux/hooks/useAppSelector.tsx";
+import {useAppDispatch} from "../../redux/hooks/useAppDispatch.tsx";
+import {postSliceActions} from "../../redux/postSlice/PostSlice.tsx";
 
 
 const PostsComponent = () => {
-    const {posts} = useAppSelector(state => state.postSlice);
-    const dispatch = useDispatch();
+  const {posts} = useAppSelector(state => state.postSlice);
+    const dispatch = useAppDispatch();
     useEffect(() => {
-        postService.getAllPosts()
-            .then(response => {
-                dispatch(postSliceActions.loadPosts(response))
-            })
-    }, []);
+      dispatch(postSliceActions.loadPosts())
+    }, [dispatch]);
 
     return (
         <div>
@@ -25,3 +22,4 @@ const PostsComponent = () => {
 };
 
 export default PostsComponent;
+

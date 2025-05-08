@@ -1,4 +1,5 @@
 import {IUser} from "../models/interfaces/IUser.ts";
+import {IPosts} from "../models/interfaces/IPost.ts";
 
 const baseUrl = 'https://jsonplaceholder.typicode.com'
 
@@ -12,7 +13,7 @@ export const getAllUsers = async ():Promise<IUser[]> => {
 
 
 export const postService = {
-    getAllPosts: async () => {
+    getAllPosts: async ():Promise<IPosts[]> => {
      return await fetch(baseUrl + '/posts')
             .then((response) => response.json())
     }
