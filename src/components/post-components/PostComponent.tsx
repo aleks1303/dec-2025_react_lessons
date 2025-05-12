@@ -1,9 +1,13 @@
+import {IPost} from "../../models/IPost.ts";
+import {FC} from "react";
 
-
-const PostComponent = () => {
+type PropsPostType = {
+    item: IPost
+}
+const PostComponent:FC<PropsPostType> = ({item}) => {
     return (
         <div>
-            PostComponent
+            {item.id}. {item.title}
         </div>
     );
 };

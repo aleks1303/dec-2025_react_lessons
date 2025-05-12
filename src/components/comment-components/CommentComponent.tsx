@@ -1,9 +1,14 @@
+import {IComment} from "../../models/IComments.ts";
+import {FC} from "react";
 
+type PropsCommentType = {
+    item: IComment
+}
 
-const CommentComponent = () => {
+const CommentComponent:FC<PropsCommentType> = ({item}) => {
     return (
         <div>
-            CommentComponent
+            {item.id}. {item.name}
         </div>
     );
 };
