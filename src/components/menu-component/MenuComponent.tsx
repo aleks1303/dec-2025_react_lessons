@@ -10,7 +10,7 @@ const MenuComponent = () => {
                 <li><Link to={'posts'}>posts</Link></li>
                 <li><Link to={'comments'}>comments</Link></li>
                 <li><Link to={'users/1'}>User-1</Link></li>
-
+                <li><Link to={'complex'}>complex</Link></li>
             </ul>
         </div>
     );
